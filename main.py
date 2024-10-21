@@ -10,8 +10,8 @@ class Mountain(SQLModel, table=True):
     height: int
     local_name: str | None = Field(default=None, index=True)
 
-db_user, db_pwd, db_host = os.getenv('DB_USER'), os.getenv('DB_PWD'), os.getenv('DB_HOST')
-engine = create_engine(f"mysql+pymysql://{db_user}:{db_pwd}@{db_host}/foo")
+db_user, db_pwd, db_host, db_name = os.getenv('DB_USER'), os.getenv('DB_PWD'), os.getenv('DB_HOST'), os.getenv('DB_NAME')
+engine = create_engine(f"mysql+pymysql://{db_user}:{db_pwd}@{db_host}/{db_name}")
 
 def create_db_and_tables():
     SQLModel.metadata.create_all(engine)
