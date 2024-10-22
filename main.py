@@ -30,9 +30,9 @@ app = FastAPI()
 @app.on_event("startup")
 def on_startup():
     create_db_and_tables()
-    mountain_1 = Mountain(name="Mt. Everest", height=29032, local_name="Sagarmatha Himal")
-    mountain_2 = Mountain(name="Mt. Annapurna", height=26545, local_name="Annapurna Himal")
-    mountain_3 = Mountain(name="Mt. Fishtail", height=22943, local_name="Machapuchare Himal")
+    mountain_1 = Mountain(name="Mt. Everest", height=29032, local_name="Sagarmatha")
+    mountain_2 = Mountain(name="Mt. Annapurna", height=26545)
+    mountain_3 = Mountain(name="Mt. Fishtail", height=22943, local_name="Machapuchare")
     mountain_4 = Mountain(name="Mt. McKinley", height=20310, local_name="Denali")
     mountain_5 = Mountain(name="Mt. Rainier", height=14410, local_name="Tahoma")
     with Session(engine) as session:
